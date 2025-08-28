@@ -185,8 +185,6 @@ nav .right a span {
   color: #1a1c20;
   color: gray;
 }
-
-/* 👇 Start media query */
 @media (max-width: 600px) {
   /* Navbar */
   nav {
@@ -218,15 +216,21 @@ nav .right a span {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 16px; /* move padding here */
   }
 
   .blog-card {
-    padding: 16px;
+    width: 100%;
+    max-width: 100%;  /* prevent overflow */
+    padding: 16px;    /* smaller padding for mobile */
+    box-sizing: border-box;
+    margin: 10px auto;
   }
-  @media (max-width: 600px) {
-  .blog-section {
-    padding: 0 16px;
+   .blog-card h3 {
+    font-size: 20px;  /* smaller heading */
+  }
+  
+  .blog-card p {
+    font-size: 14px;  /* smaller date text */
   }
 }
-}
-
